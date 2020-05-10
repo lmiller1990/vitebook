@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="module">
+    import { createApp, h } from 'vue'
+    import { createRouter, createWebHistory } from 'vue-router'
+    import App from '/App.vue'
+    import Stories from '/Stories.vue'
+
+    const router = createRouter({
+      history: createWebHistory(),
+      routes: [
+        {
+          path: '/:name?',
+          component: Stories,
+        }
+      ]
+    })
+
+    const app = createApp(App)
+    app.use(router)
+    app.mount('#app')
+  </script>
+</body>
+</html>
